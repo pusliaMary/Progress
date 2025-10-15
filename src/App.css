@@ -1,0 +1,143 @@
+body {
+  display: flex;
+  flex-direction: column;
+  margin:0;
+  
+   
+}
+
+
+
+.container {
+  background-color: rgb(197, 241, 212);
+}
+
+nav {
+  width: 100vw;
+  display: flex;
+  align-items: flex-start;
+  
+}
+
+.link {
+  padding: 20px;
+  margin: 20px;
+  text-decoration: none;
+  color:black;
+  font-size: 25px;
+}
+
+.firstPage {
+  margin-right: auto;
+  
+}
+
+h1 {
+  margin: 20px;
+  
+}
+
+.task {
+  
+  padding: 10px;
+  font-size: 20px;
+  
+  width: 100%;
+   
+}
+
+.todo {
+  background-color: #F0F0F0;
+
+}
+
+
+
+/*.done {
+
+} */
+
+.flex-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+}
+
+.block {
+  height: 90vh;
+  padding:20px;
+  width:100%;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  
+}
+
+.btn {
+  padding: 15px;
+  border: 1px solid green;
+  border-radius: 5px;
+  width: 100px;
+  background-color: green;
+  color: white;
+  font-size: 15px;
+  margin-bottom: 20px;
+}
+
+input {
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+.crossedOut {
+  
+  text-decoration: line-through;
+  
+}
+
+p {
+  font-size: 20px;
+  color: black;
+}
+
+.test {
+  height: 30px;
+  background-color: aqua;
+  width: 100px;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  
+}
+
+.tasks {
+  width: 350px;
+}
+
+
+
+.btnDelete {
+  background-color: #282828;
+  width: 200px;
+  padding:5px;
+  height: 30px;
+  margin-bottom: 0;
+}
+
+.hidden {
+  font-size: 10px;
+  width: 100px;
+  color:#797878;
+  align-self: flex-end;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  
+}
