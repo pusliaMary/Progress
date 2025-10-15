@@ -1,15 +1,18 @@
 import EasyTask from "./EasyTask"
 
 
-const EasyModeList = ({easyList, doneTask, setEasyList}) => {
+const EasyModeList = ({easyList, doneTask}) => {
     
      
        
     return (
         <div >
-        {easyList.map((item, index)=> {
+        {easyList.map((item)=> {
                     return (
-                        <EasyTask doneTask={doneTask} item={item} key={index} />
+                        <EasyTask
+                            key={item.id} 
+                            doneTask={doneTask} 
+                            item={item} />
                     )
             })}
         

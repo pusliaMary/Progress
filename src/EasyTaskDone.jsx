@@ -1,13 +1,9 @@
-import { useState } from "react"
 
-const EasyTaskDone = ({item, id}) => {
-
-    
-    
+const EasyTaskDone = ({item}) => {
 
     return (
-           <div key={id} className="test">
-                <p>{item[id].text}</p>
+           <div className="test">
+                <p>{item.text}</p>
             </div>   
 
     )

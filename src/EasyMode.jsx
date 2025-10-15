@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import EasyModeDone from "./EasyModeDone";
 import EasyModeList from "./EasyModeList";
 import { v4 as uuid } from 'uuid';
@@ -6,7 +6,15 @@ import { v4 as uuid } from 'uuid';
 
 
 
-const EasyMode = ({input, setInput, easyList, setEasyList, setInputSubmited, doneList, setDoneList}) => {
+const EasyMode = () => {
+
+    const [input, setInput] = useState('')
+  
+    const [easyList, setEasyList] = useState([])
+
+    const [inputSubmited,setInputSubmited] = useState('')
+
+    const [doneList, setDoneList] = useState([])
 
     const handleInput =(e) => {
         setInput(e.target.value)
@@ -26,7 +34,7 @@ const EasyMode = ({input, setInput, easyList, setEasyList, setInputSubmited, don
           
     const finalSubmit = (e) => {
       e.preventDefault()
-      setInputSubmited(input)
+      setInputSubmited(inputSubmited)
     }
 
     const inputRef = useRef(null)
@@ -38,10 +46,25 @@ const EasyMode = ({input, setInput, easyList, setEasyList, setInputSubmited, don
     }
 
     const doneTask = (chosenTask) => {
-        const newList = easyList.filter((item)=> item.id !== chosenTask)
-        console.log(newList)
-        setDoneList([newList])
+            //находим кликнутую таску по id с помощью find
+        const foundTask = easyList.find((item)=> item.id !== chosenTask)
         
+        console.log(foundTask)
+        
+        setDoneList(prev => {
+            //проверяем, есть ли уже такая таска в doneList c помощью some
+            const alreadyExists = prev.some(item => item.id === chosenTask)
+            if (alreadyExists) {
+                //если есть, то удаляем ее с помощью filter
+                return prev.filter(item => item.id !== chosenTask)
+            }
+                //если нет, то добавляем в doneList, prev это предыдущий стейт doneList
+            return [...prev, foundTask] 
+        })
+
+        const newTasks = easyList.filter((item)=> item !== foundTask)
+
+        setEasyList(newTasks)
         
         
                             
@@ -59,7 +82,7 @@ const EasyMode = ({input, setInput, easyList, setEasyList, setInputSubmited, don
             
             <EasyModeList input={input} doneTask={doneTask} easyList={easyList} setEasyList={setEasyList}  className="block todo"/>
                     
-            <EasyModeDone doneList={doneList} setDoneList={setDoneList}  className="block"/>
+            <EasyModeDone doneList={doneList} setDoneList={setDoneList} className="block"/>
             
             
                 
