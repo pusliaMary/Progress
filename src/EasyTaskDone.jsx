@@ -2,8 +2,8 @@
 const EasyTaskDone = ({item}) => {
 
     return (
-           <div className="test">
-                <p>{item.text}</p>
+           <div>
+                <p className="par">{item.text}</p>
             </div>   
 
     )

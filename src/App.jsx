@@ -1,11 +1,11 @@
 import './App.css'
-import React, { useState } from 'react';
+
 import {
   BrowserRouter as Router,
   Routes,
   Route,
   Link, 
-  Navigate
+  Navigate  
 } from 'react-router-dom'
 
 
@@ -13,13 +13,20 @@ import EasyMode from './EasyMode'
 import MediumMode from './MediumMode'
 import HardMode from './HardMode'
 
-function App() {
     
-  return <Router>
-    <nav className="container"> <Link to='/'></Link>
-      <Link to='/EasyMode' className='link firstPage'>Easy Mode</Link>
-      <Link to='/MediumMode' className='link'>Medium Mode</Link>
-      <Link to='/HardMode' className='link'>Hard Mode</Link>
+
+function App() {
+
+
+    
+    
+  return <Router
+  
+  >
+    <nav className="container"> <Link to='/' ></Link>
+      <Link to='/EasyMode' className='link firstPage' >Easy Mode</Link>
+      <Link to='/MediumMode' className='link' >Medium Mode</Link>
+      <Link to='/HardMode' className='link' >Hard Mode</Link>
     </nav>
 
     <Routes> 

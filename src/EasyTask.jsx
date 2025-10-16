@@ -1,4 +1,4 @@
-import { useState, useCallback } from "react"
+import { useState } from "react"
 
 const EasyTask = ({item, doneTask}) => {
 
@@ -8,11 +8,7 @@ const EasyTask = ({item, doneTask}) => {
         setCrossedOut(!crossedOut)
         
     }
-
-    
-    
-
-
+  
     return (
            <div className='row tasks'>
                 <p 

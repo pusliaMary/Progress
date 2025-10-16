@@ -1,7 +1,9 @@
-import { useRef, useState } from "react";
+import { useRef, useState, useCallback } from "react";
 import EasyModeDone from "./EasyModeDone";
 import EasyModeList from "./EasyModeList";
 import { v4 as uuid } from 'uuid';
+import Swal from 'sweetalert2';
+
 
 
 
@@ -16,25 +18,9 @@ const EasyMode = () => {
 
     const [doneList, setDoneList] = useState([])
 
-    const handleInput =(e) => {
+    const handleInput = (e) => {
         setInput(e.target.value)
         
-    }
-
-    const addTask = () => {
-        const newTask = {
-            text: input, 
-            id: uuid()
-        }
-        setEasyList([...easyList, newTask])
-        handleReset()
-        
-    }
-
-          
-    const finalSubmit = (e) => {
-      e.preventDefault()
-      setInputSubmited(inputSubmited)
     }
 
     const inputRef = useRef(null)
@@ -43,36 +29,63 @@ const EasyMode = () => {
         if (inputRef.current) {
             inputRef.current.value = ''
         }
+        setInput('')
     }
 
+    const addTask = () => {
+        const newTask = {
+            text: input, 
+            id: uuid()
+        }
+
+        if (input==='') { 
+            Swal.fire({
+                icon: "error",
+                title: "Oops...",
+                text: "Please write the task",
+            })
+            return;
+        
+        }
+         
+        setEasyList([...easyList, newTask])
+        handleReset()
+               
+    }
+
+          
+    const finalSubmit = (e) => {
+      e.preventDefault()
+      setInputSubmited(inputSubmited)
+    }
+
+    
+
     const doneTask = (chosenTask) => {
-            //находим кликнутую таску по id с помощью find
-        const foundTask = easyList.find((item)=> item.id !== chosenTask)
-        
-        console.log(foundTask)
-        
+            
+        const foundTask = easyList.find((item)=> item.id === chosenTask)
+               
         setDoneList(prev => {
-            //проверяем, есть ли уже такая таска в doneList c помощью some
+            
             const alreadyExists = prev.some(item => item.id === chosenTask)
             if (alreadyExists) {
-                //если есть, то удаляем ее с помощью filter
+                
                 return prev.filter(item => item.id !== chosenTask)
             }
-                //если нет, то добавляем в doneList, prev это предыдущий стейт doneList
+                
             return [...prev, foundTask] 
         })
-
+        
         const newTasks = easyList.filter((item)=> item !== foundTask)
 
         setEasyList(newTasks)
-        
-        
+
                             
     }
 
             
     return (
-        <div className="flex-center">
+        <div className="flex-center todo">
             <h1>To-do list</h1>
             <form onSubmit={finalSubmit} className="flex-center">
                 <input ref={inputRef} type='text' placeholder='Add task...' onChange={handleInput} />
@@ -80,9 +93,9 @@ const EasyMode = () => {
             </form>
 
             
-            <EasyModeList input={input} doneTask={doneTask} easyList={easyList} setEasyList={setEasyList}  className="block todo"/>
+            <EasyModeList input={input} doneTask={doneTask} easyList={easyList} setEasyList={setEasyList}/>
                     
-            <EasyModeDone doneList={doneList} setDoneList={setDoneList} className="block"/>
+            <EasyModeDone doneList={doneList} setDoneList={setDoneList}/>
             
             
                 

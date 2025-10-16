@@ -2,14 +2,10 @@ body {
   display: flex;
   flex-direction: column;
   margin:0;
-  
-   
 }
 
-
-
 .container {
-  background-color: rgb(197, 241, 212);
+  background-color: #322821;
 }
 
 nav {
@@ -17,13 +13,14 @@ nav {
   display: flex;
   align-items: flex-start;
   
+  
 }
 
 .link {
   padding: 20px;
   margin: 20px;
   text-decoration: none;
-  color:black;
+  color: #CEBDA9;
   font-size: 25px;
 }
 
@@ -41,13 +38,12 @@ h1 {
   
   padding: 10px;
   font-size: 20px;
-  
   width: 100%;
    
 }
 
 .todo {
-  background-color: #F0F0F0;
+  background-color: #CEBDA9;
 
 }
 
@@ -61,25 +57,21 @@ h1 {
   display: flex;
   flex-direction: column;
   align-items: center;
-  
+    
 }
 
 .block {
-  height: 90vh;
-  padding:20px;
+  height: 26vw;
   width:100%;
-  display: flex;
-  flex-direction: column;
-  border-radius: 10px;
-  
 }
+
 
 .btn {
   padding: 15px;
-  border: 1px solid green;
+  border: 1px solid #C82600;
   border-radius: 5px;
   width: 100px;
-  background-color: green;
+  background-color: #C82600;
   color: white;
   font-size: 15px;
   margin-bottom: 20px;
@@ -99,12 +91,6 @@ input {
 p {
   font-size: 20px;
   color: black;
-}
-
-.test {
-  height: 30px;
-  background-color: aqua;
-  width: 100px;
 }
 
 .row {
@@ -141,3 +127,30 @@ p {
   flex-direction: column;
   
 }
+
+.items-done {
+  
+  width:100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  padding: 20px;
+  
+  
+}
+
+.item-done {
+  color: #282828;
+   
+  
+}
+
+.grey {
+  background-color: #cfcccc;
+}
+
+.par {
+  text-align: center;
+}
+
+
+

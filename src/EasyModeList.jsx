@@ -6,7 +6,7 @@ const EasyModeList = ({easyList, doneTask}) => {
      
        
     return (
-        <div >
+        <div className="flex-center block">
         {easyList.map((item)=> {
                     return (
                         <EasyTask
