@@ -195,14 +195,8 @@ form {
   
 }
 
-.flexEnd {
-  justify-content: space-between;
-  width: 100%;
-}
-
 .deleteCategory {
   height: 50px;
-  width:70px;
   border: none;
   background-color: #cfcccc;
   border-radius: 10px;

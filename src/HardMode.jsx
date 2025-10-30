@@ -1,7 +1,9 @@
+import Progress from './Desktop.png'
+
 const HardMode = () => {
     return (
-        <div>
-            <h1>Tactical plan</h1>
+        <div className='flex-center'>
+            <img src={Progress} alt="background" width="1400px"/>
         </div>
     )
 }
