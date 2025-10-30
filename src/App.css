@@ -2,6 +2,8 @@ body {
   display: flex;
   flex-direction: column;
   margin:0;
+  background-color: #cfcccc;
+  
 }
 
 .container {
@@ -31,7 +33,15 @@ nav {
 
 h1 {
   margin: 20px;
-  
+  text-transform: uppercase;
+  padding: 50px;
+  width:100%;
+  text-align: center;
+  font-size: 40px;
+  color: white;
+  background-color: #322821;
+  margin: 0;
+  margin-bottom: 50px;
 }
 
 .task {
@@ -43,25 +53,28 @@ h1 {
 }
 
 .todo {
+  width:100%;
   background-color: #CEBDA9;
-
+  min-height: 80vh;
 }
-
-
-
-/*.done {
-
-} */
 
 .flex-center {
   display: flex;
   flex-direction: column;
   align-items: center;
-    
+      
+}
+
+.flex-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  
+      
 }
 
 .block {
-  height: 26vw;
+  
   width:100%;
 }
 
@@ -75,11 +88,25 @@ h1 {
   color: white;
   font-size: 15px;
   margin-bottom: 20px;
+  align-self: flex-end;
+  margin-right: 30px;
+}
+
+.buttonAdd {
+  background-color: green;
+  border: 1px solid green;
+  margin-right: 0;
+  align-self: center;
+}
+
+.btnCategory {
+  align-self: flex-end;
+  margin-right: 20px;
 }
 
 input {
   padding: 10px;
-  margin-bottom: 20px;
+  margin: 20px 90px 20px 20px;
 }
 
 .crossedOut {
@@ -105,15 +132,14 @@ p {
   width: 350px;
 }
 
-
-
-.btnDelete {
-  background-color: #282828;
-  width: 200px;
-  padding:5px;
-  height: 30px;
-  margin-bottom: 0;
+form {
+  width: 100%;
 }
+
+.deleteBtn {
+  margin-top: 53vh;
+}
+
 
 .hidden {
   font-size: 10px;
@@ -152,5 +178,33 @@ p {
   text-align: center;
 }
 
+.categoryHeading {
+  text-align: center;
+  text-transform: uppercase;
+}
 
+.categoryContainer {
+  display: flex;
+  flex-wrap: wrap;
+  
+}
 
+.categoryBlock {
+  width: 30%;
+  padding: 20px;
+  
+}
+
+.flexEnd {
+  justify-content: space-between;
+  width: 100%;
+}
+
+.deleteCategory {
+  height: 50px;
+  width:70px;
+  border: none;
+  background-color: #cfcccc;
+  border-radius: 10px;
+  color: #282828;
+}

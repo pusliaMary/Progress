@@ -1,6 +1,6 @@
-import EasyTaskDone from "./EasyTaskDone"
+import MediumTaskDone from "./MediumTaskDone"
 
-const EasyModeDone = ({doneList}) => {
+const MediumModeDone = ({doneList, deleteAllDone}) => {
     
     
     return (
@@ -10,10 +10,12 @@ const EasyModeDone = ({doneList}) => {
             {doneList.map((item)=> {
                     return(
                         <div key={item.id}>
-                            <EasyTaskDone item={item} />
+                            <MediumTaskDone item={item} />
                         </div>
             )})}
+            
             </div>
+            <button className="btn" onClick={deleteAllDone}>Delete all</button>
                     
         </div>
         )
@@ -23,4 +25,4 @@ const EasyModeDone = ({doneList}) => {
 
  
 
-export default EasyModeDone
+export default MediumModeDone

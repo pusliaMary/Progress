@@ -8,6 +8,8 @@ const EasyTask = ({item, doneTask}) => {
         setCrossedOut(!crossedOut)
         
     }
+
+    
   
     return (
            <div className='row tasks'>

@@ -1,23 +1,23 @@
-import EasyTask from "./EasyTask"
+import MediumTask from "./MediumTask"
 
 
-const EasyModeList = ({easyList, doneTask}) => {
+const MediumModeList = ({mediumList, doneTask, deleteAllTasks}) => {
     
      
        
     return (
         <div className="flex-center block">
-        {easyList.map((item)=> {
+        {mediumList.map((item)=> {
                     return (
-                        <EasyTask
+                        <MediumTask
                             key={item.id} 
                             doneTask={doneTask} 
                             item={item} />
                     )
             })}
-        
+        <button className="btn deleteBtn" onClick={deleteAllTasks}>Delete all</button>
         </div>)
        
 }
 
-export default EasyModeList
+export default MediumModeList
