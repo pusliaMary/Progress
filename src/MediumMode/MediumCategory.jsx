@@ -60,7 +60,7 @@ const MediumCategory = () => {
 
     return (
         <div>
-            <h1>Life balance progress</h1>
+            <h1>Life balance progress (<span>NOT FINISHED</span>)</h1>
             
             <form onSubmit={finalSubmitCat} className="flex-right">
                     <input ref={inputRefCat} type='text' placeholder='Add life area (work, learning, sports...)' onChange={handleInputCat} className="btnCategory"/>

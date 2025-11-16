@@ -38,6 +38,7 @@ const EasyMode = () => {
         setInput('')
     }
 
+      
     const addTask = () => {
         const newTask = {
             text: input, 
@@ -50,8 +51,9 @@ const EasyMode = () => {
                 title: "Oops...",
                 text: "Please write the task",
             })
-            return;
-        
+            return 
+            
+                                
         }
          
         setEasyList([...easyList, newTask])

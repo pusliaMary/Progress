@@ -14,8 +14,7 @@ nav {
   width: 100vw;
   display: flex;
   align-items: flex-start;
-  
-  
+    
 }
 
 .link {
@@ -24,7 +23,26 @@ nav {
   text-decoration: none;
   color: #CEBDA9;
   font-size: 25px;
+  
 }
+
+
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    
+  }
+  50% {
+    transform: scale(1.03);
+    
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+
 
 .firstPage {
   margin-right: auto;
@@ -55,14 +73,28 @@ h1 {
 .todo {
   width:100%;
   background-color: #CEBDA9;
-  min-height: 80vh;
+  
 }
+
+.todoMedium {
+  width:90%;
+  background-color: #CEBDA9;
+  min-height: 80vh;
+  max-height:fit-content;
+  padding:20px;
+}
+
+
 
 .flex-center {
   display: flex;
   flex-direction: column;
   align-items: center;
-      
+  justify-content: space-between;
+  
+  height: 100%;
+  
+    
 }
 
 .flex-right {
@@ -74,7 +106,6 @@ h1 {
 }
 
 .block {
-  
   width:100%;
 }
 
@@ -97,6 +128,7 @@ h1 {
   border: 1px solid green;
   margin-right: 0;
   align-self: center;
+  justify-self: center;
 }
 
 .btnCategory {
@@ -107,7 +139,10 @@ h1 {
 input {
   padding: 10px;
   margin: 20px 90px 20px 20px;
+  animation: pulse 1.5s infinite ease-in-out;
+  animation-delay: 3;
 }
+
 
 .crossedOut {
   
@@ -136,16 +171,27 @@ form {
   width: 100%;
 }
 
-.deleteBtn {
-  margin-top: 53vh;
+.tasksCont {
+  min-height: 65vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  
 }
+
+.deleteBtn {
+  align-self: flex-end;
+  justify-self: center;
+}
+
 
 
 .hidden {
   font-size: 10px;
   width: 100px;
   color:#797878;
-  align-self: flex-end;
+  
 }
 
 .column {
@@ -185,6 +231,7 @@ form {
 
 .categoryContainer {
   display: flex;
+  justify-content: space-around;
   flex-wrap: wrap;
   
 }
@@ -201,4 +248,8 @@ form {
   background-color: #cfcccc;
   border-radius: 10px;
   color: #282828;
+}
+
+span {
+  color:#C82600;
 }

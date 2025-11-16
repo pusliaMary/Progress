@@ -6,16 +6,18 @@ const MediumModeList = ({mediumList, doneTask, deleteAllTasks}) => {
      
        
     return (
-        <div className="flex-center block">
-        {mediumList.map((item)=> {
+        <div className="tasksCont">
+            <div>
+                {mediumList.map((item)=> {
                     return (
                         <MediumTask
                             key={item.id} 
                             doneTask={doneTask} 
                             item={item} />
                     )
-            })}
-        <button className="btn deleteBtn" onClick={deleteAllTasks}>Delete all</button>
+                })}
+            </div>
+            <button className="deleteBtn btn" onClick={deleteAllTasks}>Delete all</button>
         </div>)
        
 }

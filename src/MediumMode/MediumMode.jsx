@@ -10,11 +10,11 @@ const MediumMode = ({setMediumCategory, mediumCategory, index }) => {
 
     const [input, setInput] = useState('')
   
-    const [mediumList, setMediumList] = useState(localStorage.mediumList ? JSON.parse(localStorage.mediumList) : [])
+    const [mediumList, setMediumList] = useState([])
 
     const [inputSubmited,setInputSubmited] = useState('')
 
-    const [doneList, setDoneList] = useState(localStorage.doneList ? JSON.parse(localStorage.doneList) : [])
+    const [doneList, setDoneList] = useState([])
 
     useEffect(()=> {
         localStorage.setItem('mediumList', JSON.stringify(mediumList))
@@ -49,8 +49,11 @@ const MediumMode = ({setMediumCategory, mediumCategory, index }) => {
     const addTask = () => {
         const newTask = {
             text: input, 
-            id: uuid()
+            id: uuid(),
+            done: false
         }
+
+        
 
         if (input==='') { 
             Swal.fire({
@@ -109,8 +112,8 @@ const MediumMode = ({setMediumCategory, mediumCategory, index }) => {
 
             
     return (
-        <div className="flex-center">
-            <div className="flex-center todo">
+        <div>
+            <div className="todoMedium">
                 <form onSubmit={finalSubmit} className="flex-center">
                     <div className="flexEnd">
                         <input ref={inputRef} type='text' placeholder='Add task...' onChange={handleInput} />
