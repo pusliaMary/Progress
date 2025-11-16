@@ -13,11 +13,18 @@ import EasyMode from './EasyMode/EasyMode'
 import HardMode from './HardMode'
 import MediumCategory from './MediumMode/MediumCategory'
 
+import gsap from 'gsap'
+import { useGSAP } from '@gsap/react'
+
+gsap.registerPlugin(useGSAP)
    
 
 function App() {
 
- 
+  useGSAP(() => {
+    gsap.to('.link', { y:50, duration:2, stagger:1, scale: 1.2})
+    gsap.from('.link', {opacity:0, duration:2, stagger:1 })
+  })
     
   return <Router>
 

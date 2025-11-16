@@ -107,8 +107,9 @@ const EasyMode = () => {
             <div className="flex-center todo">
                 <h1>To-do list</h1>
                 <form onSubmit={finalSubmit} className="flex-center">
-                    <input ref={inputRef} type='text' placeholder='Add task...' onChange={handleInput} />
+                    <input ref={inputRef}  type='text' placeholder='Add task...' onChange={handleInput} />
                     <button className="btn buttonAdd" onClick={addTask}>Add task</button>
+                    <h2>WORK TO DO<img width="30" height="34" src="https://img.icons8.com/?size=100&id=40886&format=png&color=000000" alt="check-mark-button-emoji"/></h2>
                 </form>
 
                 

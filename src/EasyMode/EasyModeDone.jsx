@@ -15,7 +15,7 @@ const EasyModeDone = ({doneList, deleteAllDone}) => {
             )})}
             
             </div>
-            <button className="btn" onClick={deleteAllDone}>Delete all</button>
+            <button className="btn deleteBtn" onClick={deleteAllDone}>Delete all</button>
                     
         </div>
         )

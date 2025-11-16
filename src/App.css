@@ -11,19 +11,18 @@ body {
 }
 
 nav {
-  width: 100vw;
+  padding:20px;
   display: flex;
   align-items: flex-start;
-    
+  height: 15vh;  
 }
 
 .link {
   padding: 20px;
-  margin: 20px;
   text-decoration: none;
   color: #CEBDA9;
   font-size: 25px;
-  
+  margin-left: 20px;
 }
 
 
@@ -50,15 +49,14 @@ nav {
 }
 
 h1 {
-  margin: 20px;
   text-transform: uppercase;
-  padding: 50px;
-  width:100%;
+  width: 100%;
+  padding-bottom: 50px;
   text-align: center;
   font-size: 40px;
   color: white;
   background-color: #322821;
-  margin: 0;
+  margin-top: 0;
   margin-bottom: 50px;
 }
 
@@ -91,44 +89,63 @@ h1 {
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  
   height: 100%;
   
-    
+  
 }
 
 .flex-right {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  
-      
+        
 }
 
 .block {
+  
   width:100%;
+  min-height: 50vh;
+  
 }
 
 
 .btn {
   padding: 15px;
-  border: 1px solid #C82600;
   border-radius: 5px;
   width: 100px;
-  background-color: #C82600;
-  color: white;
   font-size: 15px;
   margin-bottom: 20px;
+  
+}
+
+.deleteBtn {
+  background-color: #C82600;
+  color: white;
+  border: 1px solid #C82600;
   align-self: flex-end;
-  margin-right: 30px;
+  justify-self: flex-end;
+  margin-right: 20px;
+}
+
+.deleteBtn:hover {
+  font-size: 20px;
+  width: 120px;
 }
 
 .buttonAdd {
   background-color: green;
   border: 1px solid green;
   margin-right: 0;
-  align-self: center;
-  justify-self: center;
+  align-self: flex-end;
+  color: white;
+  margin-right: 20px;
+}
+
+.buttonAdd:hover {
+  background-color: #fff;
+  border: 1px solid #fff;
+  color: green;
+  
 }
 
 .btnCategory {
@@ -136,11 +153,29 @@ h1 {
   margin-right: 20px;
 }
 
+.flex-between {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
 input {
   padding: 10px;
-  margin: 20px 90px 20px 20px;
+  margin: 20px;
+  align-self: flex-end;
   animation: pulse 1.5s infinite ease-in-out;
   animation-delay: 3;
+  
+  
+}
+
+
+
+input:hover {
+  background-color: #ddd;
+  font-size: 15px;
+  border: 1px solid #797878;
+  
 }
 
 
@@ -168,7 +203,9 @@ p {
 }
 
 form {
+  
   width: 100%;
+  overflow: hidden;
 }
 
 .tasksCont {
@@ -179,12 +216,6 @@ form {
   justify-content: space-between;
   
 }
-
-.deleteBtn {
-  align-self: flex-end;
-  justify-self: center;
-}
-
 
 
 .hidden {
@@ -248,6 +279,8 @@ form {
   background-color: #cfcccc;
   border-radius: 10px;
   color: #282828;
+  margin-left: 20px;
+  
 }
 
 span {

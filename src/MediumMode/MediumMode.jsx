@@ -104,27 +104,23 @@ const MediumMode = ({setMediumCategory, mediumCategory, index }) => {
         localStorage.removeItem('doneList')
     }
 
-    const deleteCategory = ({index}) => {
-        const newCategoryList = mediumCategory.filter(item=>item.id !==index)
-        setMediumCategory(newCategoryList)
-        localStorage.removeItem('mediumCategory')
-    }
+    
 
             
     return (
         <div>
             <div className="todoMedium">
                 <form onSubmit={finalSubmit} className="flex-center">
-                    <div className="flexEnd">
+                    <div >
                         <input ref={inputRef} type='text' placeholder='Add task...' onChange={handleInput} />
-                        <button className="deleteCategory" onClick={()=> deleteCategory({index})}>Remove category</button>
+                        
                     </div>
                     <button className="btn buttonAdd" onClick={addTask}>Add task</button>
                     
                 </form>
 
                 
-                <MediumModeList input={input} doneTask={doneTask} mediumList={mediumList} setMediumList={setMediumList} deleteAllTasks={deleteAllTasks}/>
+                <MediumModeList input={input} doneTask={doneTask} mediumList={mediumList} setMediumList={setMediumList} deleteAllTasks={deleteAllTasks} index={index} mediumCategory={mediumCategory} setMediumCategory={setMediumCategory}/>
             </div>
                     
             <MediumModeDone doneList={doneList} setDoneList={setDoneList} deleteAllDone={deleteAllDone}/>
