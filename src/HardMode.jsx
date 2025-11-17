@@ -4,7 +4,7 @@ const HardMode = () => {
     return (
         <div className='flex-center'>
             <h1><span>Only figma layout. In development</span></h1>
-            <img src={Progress} alt="background" width="1400px"/>
+            <img src={Progress} alt="background" width="1400px" className='img'/>
         </div>
     )
 }

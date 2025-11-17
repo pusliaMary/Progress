@@ -20,10 +20,7 @@ const EasyTask = ({item, doneTask}) => {
                     {item.text}
                 </p>
                 
-                <div className="column">
-                    <p className="hidden">Click to mark as done</p>
-                    <p className="hidden">Double click to remove</p>
-                </div>
+                
             </div>     
 
     )

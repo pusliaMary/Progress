@@ -12,7 +12,11 @@ const MediumModeList = ({mediumList, doneTask, deleteAllTasks, index, mediumCate
        
     return (
         <div className="tasksCont">
-            <div>
+            <div className="flex-center">
+                <div className="column">
+                    <p className="hidden">Click to mark as done</p>
+                    <p className="hidden">Double click to remove</p>
+                </div>
                 {mediumList.map((item)=> {
                     return (
                         <MediumTask

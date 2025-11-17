@@ -1,13 +1,17 @@
 import EasyTask from "./EasyTask"
 
 
-const EasyModeList = ({easyList, doneTask, deleteAllTasks}) => {
+const EasyModeList = ({easyList, doneTask }) => {
     
      
        
     return (
-        <div className="flex-center block">
-        <div>
+        <div className="block">
+        
+            <div className="column">
+                    <p className="hidden">Click to mark as done</p>
+                    <p className="hidden">Double click to remove</p>
+                </div>
             {easyList.map((item)=> {
                         return (
                             <EasyTask
@@ -16,9 +20,9 @@ const EasyModeList = ({easyList, doneTask, deleteAllTasks}) => {
                                 item={item} />
                         )
                 })}
-        </div>
+        
 
-        <button className="btn deleteBtn" onClick={deleteAllTasks}>Delete all</button>
+        
         </div>)
        
 }

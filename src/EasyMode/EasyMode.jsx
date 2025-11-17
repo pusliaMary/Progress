@@ -104,16 +104,18 @@ const EasyMode = () => {
             
     return (
         <div className="flex-center">
-            <div className="flex-center todo">
+            <div className="todo">
                 <h1>To-do list</h1>
                 <form onSubmit={finalSubmit} className="flex-center">
                     <input ref={inputRef}  type='text' placeholder='Add task...' onChange={handleInput} />
                     <button className="btn buttonAdd" onClick={addTask}>Add task</button>
-                    <h2>WORK TO DO<img width="30" height="34" src="https://img.icons8.com/?size=100&id=40886&format=png&color=000000" alt="check-mark-button-emoji"/></h2>
+                    
                 </form>
-
+                <h2>WORK TO DO<img width="30" height="34" src="https://img.icons8.com/?size=100&id=40886&format=png&color=000000" alt="check-mark-button-emoji"/></h2>
                 
-                <EasyModeList input={input} doneTask={doneTask} easyList={easyList} setEasyList={setEasyList} deleteAllTasks={deleteAllTasks}/>
+                
+                <EasyModeList input={input} doneTask={doneTask} easyList={easyList} setEasyList={setEasyList} />
+                <button className="btn deleteBtn" onClick={deleteAllTasks}>Delete all</button>
             </div>
                     
             <EasyModeDone doneList={doneList} setDoneList={setDoneList} deleteAllDone={deleteAllDone}/>
