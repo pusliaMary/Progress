@@ -17,17 +17,27 @@ import gsap from 'gsap'
 import { useGSAP } from '@gsap/react'
 
 gsap.registerPlugin(useGSAP)
-   
+
+import { LoaderPage } from './Loader/LoaderPage'
+import { useState, useEffect } from 'react'
 
 function App() {
 
+  const [loader, setLoader] = useState(true)
+
+  useEffect(()=> {
+    const timer = setTimeout(()=> setLoader(false), 5000)
+    return ()=> clearTimeout(timer)
+  }, [])
+
+
   useGSAP(() => {
-    gsap.to('.link', { y:50, duration:2, stagger:1, scale: 1.2})
-    gsap.from('.link', {opacity:0, duration:2, stagger:1 })
+    gsap.to('.link', { y:50, delay: 5, duration:2, stagger:1, scale: 1.2})
+    gsap.from('.link', {opacity:0, delay: 5, duration:2, stagger:1 })
   })
     
   return <Router>
-
+    {loader && <LoaderPage />}
     <nav className="container"> <Link to='/' ></Link>
       <Link to='/EasyMode' className='link firstPage'>Easy Mode</Link>
       <Link to='/MediumCategory' className='link' >Medium Mode</Link>
