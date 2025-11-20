@@ -95,13 +95,23 @@ const MediumMode = ({setMediumCategory, mediumCategory, index }) => {
     }
 
     const deleteAllTasks = () => {
-        setMediumList([])
-        localStorage.removeItem('mediumList')
+        let isComfirmed = confirm('Вы уверены, что хотите удалить все задачи?')
+        if (isComfirmed) {
+            setMediumList([])
+            localStorage.removeItem('mediumList')
+        }
+        else return
+        
     }
 
     const deleteAllDone = () => {
-        setDoneList([])
-        localStorage.removeItem('doneList')
+        let isComfirmedDone = confirm('Вы уверены, что хотите удалить всю категорию?')
+        if (isComfirmedDone) {
+            setDoneList([])
+            localStorage.removeItem('doneList')
+        }
+        else return
+        
     }
 
     

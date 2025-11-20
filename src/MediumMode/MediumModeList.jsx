@@ -5,8 +5,16 @@ const MediumModeList = ({mediumList, doneTask, deleteAllTasks, index, mediumCate
     
     const deleteCategory = ({index}) => {
         const newCategoryList = mediumCategory.filter(item=>item.id !==index)
-        setMediumCategory(newCategoryList)
-        localStorage.removeItem('mediumCategory')
+        
+        let isComfirmedCat = confirm('Вы уверены, что хотите удалить всю категорию?')
+        if (isComfirmedCat) {
+            setMediumCategory(newCategoryList)
+            localStorage.removeItem('mediumCategory')
+        }
+        else return
+
+
+        
     }
      
        
